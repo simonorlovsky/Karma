@@ -38,6 +38,7 @@
 		9499A3A119CD317A00483DAB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A3A019CD317A00483DAB /* SystemConfiguration.framework */; };
 		9499A3A719CD63E500483DAB /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3A619CD63E500483DAB /* Request.m */; };
 		9499A3F019CE013800483DAB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3EF19CE013800483DAB /* DetailViewController.m */; };
+		9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3F219CE27BC00483DAB /* RateViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +73,8 @@
 		9499A36F19CD0D7D00483DAB /* KarmaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KarmaTests-Info.plist"; sourceTree = "<group>"; };
 		9499A37119CD0D7D00483DAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9499A37319CD0D7D00483DAB /* KarmaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KarmaTests.m; sourceTree = "<group>"; };
-		9499A37D19CD180400483DAB /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
-		9499A37E19CD180400483DAB /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		9499A37D19CD180400483DAB /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = Karma/IntroViewController.h; sourceTree = "<group>"; };
+		9499A37E19CD180400483DAB /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = Karma/IntroViewController.m; sourceTree = "<group>"; };
 		9499A38219CD230E00483DAB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		9499A38A19CD308D00483DAB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		9499A38B19CD308D00483DAB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -91,6 +92,8 @@
 		9499A3A619CD63E500483DAB /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		9499A3EE19CE013800483DAB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		9499A3EF19CE013800483DAB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		9499A3F119CE27BC00483DAB /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
+		9499A3F219CE27BC00483DAB /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,17 +179,14 @@
 		9499A34B19CD0D7D00483DAB /* Karma */ = {
 			isa = PBXGroup;
 			children = (
+				9499A3F419CE2B7E00483DAB /* Intro */,
 				9499A3ED19CE00C400483DAB /* Give Karma */,
 				9499A3EC19CE00A100483DAB /* Get Karma */,
 				9499A35419CD0D7D00483DAB /* AppDelegate.h */,
 				9499A35519CD0D7D00483DAB /* AppDelegate.m */,
 				9499A35719CD0D7D00483DAB /* Main.storyboard */,
-				9499A37D19CD180400483DAB /* IntroViewController.h */,
-				9499A37E19CD180400483DAB /* IntroViewController.m */,
 				9499A36019CD0D7D00483DAB /* Images.xcassets */,
 				9499A34C19CD0D7D00483DAB /* Supporting Files */,
-				9499A3A519CD63E500483DAB /* Request.h */,
-				9499A3A619CD63E500483DAB /* Request.m */,
 			);
 			path = Karma;
 			sourceTree = "<group>";
@@ -223,6 +223,8 @@
 		9499A3EC19CE00A100483DAB /* Get Karma */ = {
 			isa = PBXGroup;
 			children = (
+				9499A3A519CD63E500483DAB /* Request.h */,
+				9499A3A619CD63E500483DAB /* Request.m */,
 				9499A35D19CD0D7D00483DAB /* SecondViewController.h */,
 				9499A35E19CD0D7D00483DAB /* SecondViewController.m */,
 			);
@@ -232,12 +234,24 @@
 		9499A3ED19CE00C400483DAB /* Give Karma */ = {
 			isa = PBXGroup;
 			children = (
+				9499A3F119CE27BC00483DAB /* RateViewController.h */,
+				9499A3F219CE27BC00483DAB /* RateViewController.m */,
 				9499A35A19CD0D7D00483DAB /* FirstViewController.h */,
 				9499A35B19CD0D7D00483DAB /* FirstViewController.m */,
 				9499A3EE19CE013800483DAB /* DetailViewController.h */,
 				9499A3EF19CE013800483DAB /* DetailViewController.m */,
 			);
 			name = "Give Karma";
+			sourceTree = "<group>";
+		};
+		9499A3F419CE2B7E00483DAB /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				9499A37D19CD180400483DAB /* IntroViewController.h */,
+				9499A37E19CD180400483DAB /* IntroViewController.m */,
+			);
+			name = Intro;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +353,7 @@
 			files = (
 				9499A35F19CD0D7D00483DAB /* SecondViewController.m in Sources */,
 				9499A35619CD0D7D00483DAB /* AppDelegate.m in Sources */,
+				9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */,
 				9499A35C19CD0D7D00483DAB /* FirstViewController.m in Sources */,
 				9499A35219CD0D7D00483DAB /* main.m in Sources */,
 				9499A37F19CD180400483DAB /* IntroViewController.m in Sources */,

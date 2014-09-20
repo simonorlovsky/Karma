@@ -105,7 +105,7 @@
                                 </state>
                                 <connections>
                                     <action selector="SubmitButton:" destination="NSe-Kf-n1s" eventType="touchUpInside" id="nz9-On-GBH"/>
-                                    <segue destination="Oe2-FG-tzz" kind="push" id="urb-Vi-cwA"/>
+                                    <segue destination="Oe2-FG-tzz" kind="modal" modalTransitionStyle="coverVertical" id="mrw-al-U0a"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,7 +135,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yV1-2Y-LM3">
-                                <rect key="frame" x="139" y="155" width="36" height="21"/>
+                                <rect key="frame" x="142" y="53" width="36" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>

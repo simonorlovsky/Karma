@@ -24,9 +24,9 @@
 {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Get Help"];
-	PFObject *request = [PFObject objectWithClassName:@"request"];
-    request[@"type"] = @"coffee";
-    [request saveInBackground];
+//	PFObject *request = [PFObject objectWithClassName:@"request"];
+//    request[@"type"] = @"coffee";
+//    [request saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning

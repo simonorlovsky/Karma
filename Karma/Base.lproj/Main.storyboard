@@ -92,7 +92,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Where are you?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTe-6P-0G1">
-                                <rect key="frame" x="20" y="190" width="280" height="30"/>
+                                <rect key="frame" x="20" y="192" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -113,6 +113,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Confirm Karma" id="YaL-at-Vcu" userLabel="Confirm Karma"/>
                     <connections>
+                        <outlet property="descriptionTextField" destination="2MR-oj-EJh" id="1f6-tt-37n"/>
+                        <outlet property="locationTextField" destination="lTe-6P-0G1" id="e2U-QI-iJm"/>
                         <outlet property="typeLabel" destination="HWz-l5-OWX" id="AtZ-04-2Rg"/>
                     </connections>
                 </viewController>

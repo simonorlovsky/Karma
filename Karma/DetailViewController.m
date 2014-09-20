@@ -28,6 +28,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.typeLabel.text = self.titleName;
+    
+    _locationTextField.delegate = self; // ADD THIS LINE
+    [self.view addSubview:_locationTextField];
+    
+    _descriptionTextField.delegate = self; // ADD THIS LINE
+    [self.view addSubview:_descriptionTextField];
+    
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touchesBegan:withEvent:");
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
 }
 
 - (void)didReceiveMemoryWarning

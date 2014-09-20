@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *typeLabel;
 @property (strong, nonatomic) IBOutlet NSString *titleName;
+
+@property (strong, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (strong, nonatomic) IBOutlet UITextField *locationTextField;
+
 
 @end

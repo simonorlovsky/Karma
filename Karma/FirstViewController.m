@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.navigationItem setTitle:@"Get Help"];
 	PFObject *request = [PFObject objectWithClassName:@"request"];
     request[@"type"] = @"coffee";
     [request saveInBackground];

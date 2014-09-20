@@ -30,12 +30,20 @@
 {
     [super viewDidLoad];
        // Do any additional setup after loading the view.
-    
-
+    //set bar color
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:59/255.0 green:89/255.0 blue:152/255.0 alpha:1.0]];
+    //optional, i don't want my bar to be translucent
+    [self.navigationController.navigationBar setTranslucent:NO];
+    //set title and title color
+    [self.navigationItem setTitle:@"Login"];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
+    //set back button color
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,nil] forState:UIControlStateNormal];
+    //set back button arrow color
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     FBLoginView *loginView = [[FBLoginView alloc] init];
     // Align the button in the center horizontally
-    loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), 5);
-    [self.view addSubview:loginView];
+    
 }
 
 - (void)didReceiveMemoryWarning

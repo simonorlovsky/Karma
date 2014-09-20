@@ -36,28 +36,28 @@
 
 
 - (IBAction)coffeeRequest:(id)sender {
-    PFObject *request = [PFObject objectWithClassName:@"request"];
-    request[@"type"] = @"coffee";
-    [request saveInBackground];
+//    PFObject *request = [PFObject objectWithClassName:@"request"];
+//    request[@"type"] = @"coffee";
+//    [request saveInBackground];
     
 }
 - (IBAction)storeRequest:(id)sender {
-    PFObject *request = [PFObject objectWithClassName:@"request"];
-    request[@"type"] = @"store";
-    [request saveInBackground];
+//    PFObject *request = [PFObject objectWithClassName:@"request"];
+//    request[@"type"] = @"store";
+//    [request saveInBackground];
     
 }
 
 - (IBAction)randomRequest:(id)sender {
-    PFObject *request = [PFObject objectWithClassName:@"request"];
-    request[@"type"] = @"random";
-    [request saveInBackground];
+//    PFObject *request = [PFObject objectWithClassName:@"request"];
+//    request[@"type"] = @"random";
+//    [request saveInBackground];
 }
 
 - (IBAction)printRequest:(id)sender {
-    PFObject *request = [PFObject objectWithClassName:@"request"];
-    request[@"type"] = @"print";
-    [request saveInBackground];
+//    PFObject *request = [PFObject objectWithClassName:@"request"];
+//    request[@"type"] = @"print";
+//    [request saveInBackground];
     
 }
 

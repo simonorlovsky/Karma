@@ -16,6 +16,7 @@
 @implementation SecondViewController
 {
     NSMutableArray *_requests;
+    NSMutableArray *_requests1;
     NSMutableArray *_typeArray;
 }
 
@@ -24,7 +25,7 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    //_requests = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    _requests1 = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
     
     _requests = [[NSMutableArray alloc] init];
     _typeArray= [[NSMutableArray alloc] init];
@@ -36,13 +37,24 @@
             NSLog(@"Successfully retrieved %d requests.", objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
+                //NSLog(@"%@", object.objectId);
                 [_requests addObject:object];
+                
             }
+             NSLog(_requests);
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
+        for (int i=0; i<50; i++) {
+            [_typeArray addObject:_requests[i][@"type"]];
+            NSLog(_requests[i][@"type"]);
+        }
+        
+        
+        NSString *type= _requests[0][@"type"];
+        
+        NSLog(type);
     }];
 }
 
@@ -54,7 +66,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_requests count];
+    return [_typeArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,7 +79,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
+    cell.textLabel.text = [_typeArray objectAtIndex:indexPath.row];
     return cell;
 }
 

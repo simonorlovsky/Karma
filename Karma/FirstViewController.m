@@ -13,6 +13,8 @@
 @interface FirstViewController ()
 
 @property(nonatomic, strong) NSString* type;
+@property (nonatomic, strong) IBOutlet UILabel *recipeLabel;
+@property (nonatomic, strong) NSString *recipeName;
 
 @end
 
@@ -58,6 +60,30 @@
 //    PFObject *request = [PFObject objectWithClassName:@"request"];
 //    request[@"type"] = @"print";
 //    [request saveInBackground];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"Segue %@", segue.identifier);
+    
+    DetailViewController *detailVC = segue.destinationViewController;
+    NSString *titleName = [[NSString alloc] init];
+    if ([segue.identifier isEqualToString:@"foodSegue"]){
+        titleName = @"Meal karma";
+        detailVC.titleName = titleName;
+    }
+    else if([segue.identifier isEqualToString:@"storeSegue"]){
+        titleName = @"Store karma";
+        detailVC.titleName = titleName;
+    }
+    else if([segue.identifier isEqualToString:@"printSegue"]){
+        titleName = @"Print karma";
+        detailVC.titleName = titleName;
+    }
+    else{
+        titleName = @"Random karma";
+        detailVC.titleName = titleName;
+    }
     
 }
 

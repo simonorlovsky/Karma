@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Request.h"
+#import <Parse/Parse.h>
 
 @interface DetailViewController : UIViewController
 
-@property (nonatomic,strong)Request *request;
+@property (strong, nonatomic) IBOutlet UILabel *typeLabel;
+@property (strong, nonatomic) IBOutlet NSString *titleName;
 
 @end

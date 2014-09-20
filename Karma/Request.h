@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString* type;
 @property (strong, nonatomic) NSString* description;
+@property (strong, nonatomic) NSString* location;
 
 
 @end

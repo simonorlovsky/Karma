@@ -9,9 +9,6 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
-{
-    NSString *_type;
-}
 
 @end
 
@@ -30,15 +27,37 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //_type = transferViewController.type;
-    
-    
+    self.typeLabel.text = self.titleName;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)SubmitButton:(id)sender {
+    if ([self.titleName isEqualToString:@"Random karma"]) {
+        PFObject *request = [PFObject objectWithClassName:@"request"];
+        request[@"type"] = @"random";
+        [request saveInBackground];
+    }
+    else if([self.titleName isEqualToString:@"Store karma"]){
+        PFObject *request = [PFObject objectWithClassName:@"request"];
+        request[@"type"] = @"store";
+        [request saveInBackground];
+    }
+    else if([self.titleName isEqualToString:@"Print karma"]){
+        PFObject *request = [PFObject objectWithClassName:@"request"];
+        request[@"type"] = @"print";
+        [request saveInBackground];
+    }
+    else{
+        PFObject *request = [PFObject objectWithClassName:@"request"];
+        request[@"type"] = @"food";
+        [request saveInBackground];
+    }
+
+    
 }
 
 /*

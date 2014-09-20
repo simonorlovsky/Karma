@@ -36,8 +36,8 @@
 		9499A39D19CD316200483DAB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A39C19CD316200483DAB /* Security.framework */; };
 		9499A39F19CD316D00483DAB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A39E19CD316D00483DAB /* StoreKit.framework */; };
 		9499A3A119CD317A00483DAB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A3A019CD317A00483DAB /* SystemConfiguration.framework */; };
-		9499A3A419CD61A700483DAB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3A319CD61A700483DAB /* DetailViewController.m */; };
 		9499A3A719CD63E500483DAB /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3A619CD63E500483DAB /* Request.m */; };
+		9499A3F019CE013800483DAB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3EF19CE013800483DAB /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,10 +87,10 @@
 		9499A39C19CD316200483DAB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9499A39E19CD316D00483DAB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9499A3A019CD317A00483DAB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9499A3A219CD61A700483DAB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		9499A3A319CD61A700483DAB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9499A3A519CD63E500483DAB /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
 		9499A3A619CD63E500483DAB /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
+		9499A3EE19CE013800483DAB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		9499A3EF19CE013800483DAB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,17 +176,13 @@
 		9499A34B19CD0D7D00483DAB /* Karma */ = {
 			isa = PBXGroup;
 			children = (
+				9499A3ED19CE00C400483DAB /* Give Karma */,
+				9499A3EC19CE00A100483DAB /* Get Karma */,
 				9499A35419CD0D7D00483DAB /* AppDelegate.h */,
 				9499A35519CD0D7D00483DAB /* AppDelegate.m */,
 				9499A35719CD0D7D00483DAB /* Main.storyboard */,
-				9499A3A219CD61A700483DAB /* DetailViewController.h */,
-				9499A3A319CD61A700483DAB /* DetailViewController.m */,
-				9499A35A19CD0D7D00483DAB /* FirstViewController.h */,
-				9499A35B19CD0D7D00483DAB /* FirstViewController.m */,
 				9499A37D19CD180400483DAB /* IntroViewController.h */,
 				9499A37E19CD180400483DAB /* IntroViewController.m */,
-				9499A35D19CD0D7D00483DAB /* SecondViewController.h */,
-				9499A35E19CD0D7D00483DAB /* SecondViewController.m */,
 				9499A36019CD0D7D00483DAB /* Images.xcassets */,
 				9499A34C19CD0D7D00483DAB /* Supporting Files */,
 				9499A3A519CD63E500483DAB /* Request.h */,
@@ -222,6 +218,26 @@
 				9499A37019CD0D7D00483DAB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9499A3EC19CE00A100483DAB /* Get Karma */ = {
+			isa = PBXGroup;
+			children = (
+				9499A35D19CD0D7D00483DAB /* SecondViewController.h */,
+				9499A35E19CD0D7D00483DAB /* SecondViewController.m */,
+			);
+			name = "Get Karma";
+			sourceTree = "<group>";
+		};
+		9499A3ED19CE00C400483DAB /* Give Karma */ = {
+			isa = PBXGroup;
+			children = (
+				9499A35A19CD0D7D00483DAB /* FirstViewController.h */,
+				9499A35B19CD0D7D00483DAB /* FirstViewController.m */,
+				9499A3EE19CE013800483DAB /* DetailViewController.h */,
+				9499A3EF19CE013800483DAB /* DetailViewController.m */,
+			);
+			name = "Give Karma";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,8 +342,8 @@
 				9499A35C19CD0D7D00483DAB /* FirstViewController.m in Sources */,
 				9499A35219CD0D7D00483DAB /* main.m in Sources */,
 				9499A37F19CD180400483DAB /* IntroViewController.m in Sources */,
-				9499A3A419CD61A700483DAB /* DetailViewController.m in Sources */,
 				9499A3A719CD63E500483DAB /* Request.m in Sources */,
+				9499A3F019CE013800483DAB /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

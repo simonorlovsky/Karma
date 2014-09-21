@@ -10,6 +10,8 @@
 	<string>Karma</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>45EC54AADAEB5D243AB63009313FE9A67798580E</key>
+		<string>https://github.com/hamia12/KarmaRating.git</string>
 		<key>A960E7D849B1D085F6E758DE58837BD0C84D9B27</key>
 		<string>https://github.com/simonorlovsky/karma.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>Karma.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>45EC54AADAEB5D243AB63009313FE9A67798580E</key>
+		<string>../../../KarmaRating</string>
 		<key>A960E7D849B1D085F6E758DE58837BD0C84D9B27</key>
 		<string>../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>A960E7D849B1D085F6E758DE58837BD0C84D9B27</string>
 			<key>IDESourceControlWCCName</key>
 			<string>karma</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>45EC54AADAEB5D243AB63009313FE9A67798580E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>KarmaRating</string>
 		</dict>
 	</array>
 </dict>

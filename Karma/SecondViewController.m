@@ -5,6 +5,7 @@
 //  Created by Simon Orlovsky on 9/19/14.
 //  Copyright (c) 2014 simonorlovsky. All rights reserved.
 //
+// Apple Jason
 
 #import "SecondViewController.h"
 #import <Parse/Parse.h>
@@ -34,27 +35,26 @@
         
         if (!error) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %d requests.", objects.count);
+            NSLog(@"Successfully retrieved %ld requests.", objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
-                //NSLog(@"%@", object.objectId);
-                [_requests addObject:object];
+                NSLog(@"%@", object.objectId);
+                [_requests addObject:object[@"type"]];
                 
             }
-             NSLog(_requests);
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-        for (int i=0; i<50; i++) {
-            [_typeArray addObject:_requests[i][@"type"]];
-            NSLog(_requests[i][@"type"]);
-        }
+//        for (int i=0; i<50; i++) {
+//            [_typeArray addObject:_requests[i][@"type"]];
+//            NSLog(_requests[i][@"type"]);
+//        }
+        [_tableView reloadData];
         
+        //NSString *type= _requests[0][@"type"];
         
-        NSString *type= _requests[0][@"type"];
-        
-        NSLog(type);
+        //NSLog(@"%@",type);
     }];
 }
 
@@ -66,7 +66,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_requests1 count];
+    NSLog(@"Number of requests: %ld",_requests.count);
+    return [_requests count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,7 +80,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [_requests1 objectAtIndex:indexPath.row];
+    NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
+    cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
     return cell;
 }
 

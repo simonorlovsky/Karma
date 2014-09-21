@@ -29,9 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+
        // Do any additional setup after loading the view.
     //set bar color
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:59/255.0 green:89/255.0 blue:152/255.0 alpha:1.0]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:22/255.0 green:56/255.0 blue:80/255.0 alpha:1.0]];
     //optional, i don't want my bar to be translucent
     [self.navigationController.navigationBar setTranslucent:NO];
     //set title and title color
@@ -43,7 +45,12 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     FBLoginView *loginView = [[FBLoginView alloc] init];
     // Align the button in the center horizontally
+    [self preferredStatusBarStyle];
     
+}
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning

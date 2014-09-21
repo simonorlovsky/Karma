@@ -22,6 +22,7 @@
                   clientKey:@"ZpNetYED8GAIH6ekICXOeJQD0OUaw016HhDBfVRY"];
     [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
 
     return YES;
 }

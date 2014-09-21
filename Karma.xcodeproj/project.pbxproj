@@ -39,6 +39,7 @@
 		9499A3A719CD63E500483DAB /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3A619CD63E500483DAB /* Request.m */; };
 		9499A3F019CE013800483DAB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3EF19CE013800483DAB /* DetailViewController.m */; };
 		9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3F219CE27BC00483DAB /* RateViewController.m */; };
+		B13F285119CE7A6D00953E69 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13F285019CE7A6D00953E69 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		9499A3EF19CE013800483DAB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9499A3F119CE27BC00483DAB /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		9499A3F219CE27BC00483DAB /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
+		B13F285019CE7A6D00953E69 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				9499A39719CD312900483DAB /* libz.dylib in Frameworks */,
 				9499A39519CD310C00483DAB /* CoreLocation.framework in Frameworks */,
 				9499A34819CD0D7D00483DAB /* CoreGraphics.framework in Frameworks */,
+				B13F285119CE7A6D00953E69 /* FacebookSDK.framework in Frameworks */,
 				9499A39319CD30F000483DAB /* CFNetwork.framework in Frameworks */,
 				9499A39119CD30E200483DAB /* AudioToolbox.framework in Frameworks */,
 				9499A38F19CD308D00483DAB /* ParseFacebookUtils.framework in Frameworks */,
@@ -155,6 +158,7 @@
 		9499A34419CD0D7D00483DAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B13F285019CE7A6D00953E69 /* FacebookSDK.framework */,
 				9499A3A019CD317A00483DAB /* SystemConfiguration.framework */,
 				9499A39E19CD316D00483DAB /* StoreKit.framework */,
 				9499A39C19CD316200483DAB /* Security.framework */,
@@ -488,6 +492,7 @@
 					/Users/simonorlovsky/Documents/FacebookSDK,
 					"/Users/simonorlovsky/Downloads/parse-library-1.4.0",
 					"$(PROJECT_DIR)",
+					/Users/hamiabdi/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karma/Karma-Prefix.pch";
@@ -507,6 +512,7 @@
 					/Users/simonorlovsky/Documents/FacebookSDK,
 					"/Users/simonorlovsky/Downloads/parse-library-1.4.0",
 					"$(PROJECT_DIR)",
+					/Users/hamiabdi/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karma/Karma-Prefix.pch";

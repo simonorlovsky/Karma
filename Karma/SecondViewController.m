@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    _requests1 = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    _requests = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
     
     _requests = [[NSMutableArray alloc] init];
     _typeArray= [[NSMutableArray alloc] init];
@@ -34,27 +34,35 @@
         
         if (!error) {
             // The find succeeded.
+            NSLog(@"Hello");
             NSLog(@"Successfully retrieved %d requests.", objects.count);
             // Do something with the found objects
+            NSInteger counter=0;
             for (PFObject *object in objects) {
-                //NSLog(@"%@", object.objectId);
+                NSLog(@"%@", object.objectId);
                 [_requests addObject:object];
+                NSLog(_requests[counter][@"description"]);
+                counter++;
                 
             }
-             NSLog(_requests);
+             NSLog(@"ready?");
+            
         } else {
+            NSLog(@"Yo");
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-        for (int i=0; i<50; i++) {
-            [_typeArray addObject:_requests[i][@"type"]];
+        for (int i=0; i<4; i++) {
+            NSLog(@"starting the output now...");
+            [_typeArray addObject:_requests[i][@"description"]];
             NSLog(_requests[i][@"type"]);
         }
         
         
-        NSString *type= _requests[0][@"type"];
+        NSString *type= _requests[0][@"description"];
         
         NSLog(type);
+        [tableView reloadData];
     }];
 }
 
@@ -66,7 +74,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_requests1 count];
+    return [_requests count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,7 +87,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [_requests1 objectAtIndex:indexPath.row];
+    cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
     return cell;
 }
 

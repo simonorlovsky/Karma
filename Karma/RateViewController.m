@@ -26,6 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    //set bar color
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:22/255.0 green:56/255.0 blue:80/255.0 alpha:1.0]];
+    //optional, i don't want my bar to be translucent
+    [self.navigationController.navigationBar setTranslucent:NO];
+    //set title and title color
+    [self.navigationItem setTitle:@"Rate"];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
+    //set back button color
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor,nil] forState:UIControlStateNormal];
+    //set back button arrow color
+        // Align the button in the center horizontally
+    [self preferredStatusBarStyle];
+
     [self.navigationItem setHidesBackButton:YES];
     
 }

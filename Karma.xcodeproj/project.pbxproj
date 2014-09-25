@@ -39,6 +39,10 @@
 		9499A3A719CD63E500483DAB /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3A619CD63E500483DAB /* Request.m */; };
 		9499A3F019CE013800483DAB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3EF19CE013800483DAB /* DetailViewController.m */; };
 		9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3F219CE27BC00483DAB /* RateViewController.m */; };
+		94B729B119CECFFE00783F6F /* KarmaRecieveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */; };
+		94E3F64D19D39FF000DED45B /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E3F64C19D39FF000DED45B /* ProgressViewController.m */; };
+		94F6458A19CED39A00658DE2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F6458919CED39A00658DE2 /* Social.framework */; };
+		94F6458C19CED3A300658DE2 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F6458B19CED3A300658DE2 /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +98,12 @@
 		9499A3EF19CE013800483DAB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9499A3F119CE27BC00483DAB /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		9499A3F219CE27BC00483DAB /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
+		94B729AF19CECFFE00783F6F /* KarmaRecieveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KarmaRecieveViewController.h; sourceTree = "<group>"; };
+		94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KarmaRecieveViewController.m; sourceTree = "<group>"; };
+		94E3F64B19D39FF000DED45B /* ProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
+		94E3F64C19D39FF000DED45B /* ProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
+		94F6458919CED39A00658DE2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		94F6458B19CED3A300658DE2 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F6458C19CED3A300658DE2 /* Twitter.framework in Frameworks */,
+				94F6458A19CED39A00658DE2 /* Social.framework in Frameworks */,
 				9499A3A119CD317A00483DAB /* SystemConfiguration.framework in Frameworks */,
 				9499A39F19CD316D00483DAB /* StoreKit.framework in Frameworks */,
 				9499A39D19CD316200483DAB /* Security.framework in Frameworks */,
@@ -155,6 +167,8 @@
 		9499A34419CD0D7D00483DAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94F6458B19CED3A300658DE2 /* Twitter.framework */,
+				94F6458919CED39A00658DE2 /* Social.framework */,
 				9499A3A019CD317A00483DAB /* SystemConfiguration.framework */,
 				9499A39E19CD316D00483DAB /* StoreKit.framework */,
 				9499A39C19CD316200483DAB /* Security.framework */,
@@ -224,9 +238,13 @@
 			isa = PBXGroup;
 			children = (
 				9499A3A519CD63E500483DAB /* Request.h */,
+				94B729AF19CECFFE00783F6F /* KarmaRecieveViewController.h */,
+				94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */,
 				9499A3A619CD63E500483DAB /* Request.m */,
 				9499A35D19CD0D7D00483DAB /* SecondViewController.h */,
 				9499A35E19CD0D7D00483DAB /* SecondViewController.m */,
+				94E3F64B19D39FF000DED45B /* ProgressViewController.h */,
+				94E3F64C19D39FF000DED45B /* ProgressViewController.m */,
 			);
 			name = "Get Karma";
 			sourceTree = "<group>";
@@ -352,9 +370,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9499A35F19CD0D7D00483DAB /* SecondViewController.m in Sources */,
+				94B729B119CECFFE00783F6F /* KarmaRecieveViewController.m in Sources */,
 				9499A35619CD0D7D00483DAB /* AppDelegate.m in Sources */,
 				9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */,
 				9499A35C19CD0D7D00483DAB /* FirstViewController.m in Sources */,
+				94E3F64D19D39FF000DED45B /* ProgressViewController.m in Sources */,
 				9499A35219CD0D7D00483DAB /* main.m in Sources */,
 				9499A37F19CD180400483DAB /* IntroViewController.m in Sources */,
 				9499A3A719CD63E500483DAB /* Request.m in Sources */,

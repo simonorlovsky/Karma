@@ -82,7 +82,16 @@
     
     NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
     cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:60];
+
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Value Selected by user
+    //NSString *selectedValue = [displayValues objectAtIndex:indexPath.row];
+    //Initialize new viewController
+    [self performSegueWithIdentifier:@"segue" sender:self];
 }
 
 

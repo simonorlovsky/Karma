@@ -96,7 +96,7 @@
         //request[@"name"] = _userName;
         //request[@"image"] = _userImageURL;
         [request saveInBackground];
-        
+        NSLog(@"Success!!");
     }
     else if([self.titleName isEqualToString:@"Store karma"]){
         PFObject *request = [PFObject objectWithClassName:@"request"];

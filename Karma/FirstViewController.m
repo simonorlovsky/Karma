@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationItem setTitle:@"Get Help"];
+    self.navigationController.navigationBar.topItem.title = @"Give Karma";
 //	PFObject *request = [PFObject objectWithClassName:@"request"];
 //    request[@"type"] = @"coffee";
 //    [request saveInBackground];

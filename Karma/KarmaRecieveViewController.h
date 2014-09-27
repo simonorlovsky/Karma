@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface KarmaRecieveViewController : UIViewController
+
+
+@property (strong, nonatomic) IBOutlet PFObject *request;
+
+
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+
+@property (nonatomic) int rowSelected;
 
 @end

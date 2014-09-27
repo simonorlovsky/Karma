@@ -32,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view.
     _requests = [[NSMutableArray alloc] init];
     _descArray= [[NSMutableArray alloc] init];
@@ -41,9 +43,10 @@
         if (!error) {
             // The find succeeded.
             NSLog(@"Successfully retrieved %ld requests.", objects.count);
+            NSLog(@"Type is.... %@",_request[@"description"]);
             // Do something with the found objects
             for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
+                
                 [_requests addObject:object[@"type"]];
                 
             }
@@ -53,10 +56,13 @@
         }
         NSString *desc= _requests[0][@"description"];
         
-        NSLog(@"%@",desc);
+        
+        //NSLog(@"Title name: %@",self.titleName);
     }];
     
-    _titleLabel.text= @"Title";
+    _titleLabel.text = _request[@"type"];
+    _descriptionLabel.text = _request[@"description"];
+    _locationLabel.text = _request[@"location"];
 
 }
 
@@ -94,6 +100,7 @@
 
 -(void)sendCompleted{
     [self performSegueWithIdentifier:@"confirmSegue" sender:self];
+    NSLog(@"%i",_rowSelected);
 
 }
 

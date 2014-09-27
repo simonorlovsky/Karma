@@ -9,6 +9,7 @@
 
 #import "SecondViewController.h"
 #import <Parse/Parse.h>
+#import "KarmaRecieveViewController.h"
 
 @interface SecondViewController ()
 
@@ -18,14 +19,17 @@
 {
     NSMutableArray *_requests;
     NSMutableArray *_requests1;
-    NSMutableArray *_typeArray;
+    NSMutableArray *_requestObjects;
     UIRefreshControl* _refreshControl;
+    int _cellSelected;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.navigationItem setHidesBackButton:YES];
+    
+     
     
     _refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView addSubview:_refreshControl];
@@ -40,7 +44,7 @@
     _requests1 = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
     
     _requests = [[NSMutableArray alloc] init];
-    _typeArray= [[NSMutableArray alloc] init];
+    _requestObjects = [[NSMutableArray alloc] init];
     PFQuery *query = [PFQuery queryWithClassName:@"request"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
@@ -51,6 +55,7 @@
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
                 [_requests insertObject:object[@"type"] atIndex:0];
+                [_requestObjects insertObject:object atIndex:0];
                 
             }
         } else {
@@ -115,7 +120,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
     //NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
@@ -130,7 +135,20 @@
     //Value Selected by user
     //NSString *selectedValue = [displayValues objectAtIndex:indexPath.row];
     //Initialize new viewController
+    _cellSelected = indexPath.row;
     [self performSegueWithIdentifier:@"segue" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    // Make sure your segue name in storyboard is the same as this line
+    
+    // Get reference to the destination view controller
+    KarmaRecieveViewController *karmaRecieveVC = segue.destinationViewController;;
+        
+    // Pass any objects to the view controller here, like...
+    karmaRecieveVC.request = _requestObjects[_cellSelected];
+    NSLog(@"Karma type is ....%@",karmaRecieveVC.request[@"type"]);
+    
 }
 
 

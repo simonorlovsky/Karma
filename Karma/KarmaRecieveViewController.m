@@ -80,7 +80,10 @@
                                            otherButtonTitles: nil];
     [alert addButtonWithTitle:@"I'm sure"];
     [alert show];
-}
+    
+    
+    
+    }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
@@ -101,6 +104,15 @@
 -(void)sendCompleted{
     [self performSegueWithIdentifier:@"confirmSegue" sender:self];
     NSLog(@"%i",_rowSelected);
+    
+    
+    PFObject *completed = [PFObject objectWithClassName:@"completed"];
+    completed[@"type"] = _request[@"type"];
+    completed[@"description"] = _request[@"description"];
+
+    [completed saveInBackground];
+    NSLog(@"type %@", completed[@"type"]);
+    NSLog(@"Success!!");
 
 }
 

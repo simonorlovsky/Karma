@@ -48,6 +48,9 @@
     [self preferredStatusBarStyle];
     
 }
+
+
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

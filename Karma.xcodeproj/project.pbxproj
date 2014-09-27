@@ -36,10 +36,10 @@
 		9499A39D19CD316200483DAB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A39C19CD316200483DAB /* Security.framework */; };
 		9499A39F19CD316D00483DAB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A39E19CD316D00483DAB /* StoreKit.framework */; };
 		9499A3A119CD317A00483DAB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A3A019CD317A00483DAB /* SystemConfiguration.framework */; };
-		9499A3A719CD63E500483DAB /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3A619CD63E500483DAB /* Request.m */; };
 		9499A3F019CE013800483DAB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3EF19CE013800483DAB /* DetailViewController.m */; };
 		9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3F219CE27BC00483DAB /* RateViewController.m */; };
 		94B729B119CECFFE00783F6F /* KarmaRecieveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */; };
+		94D37B6619D65C2B004F7F54 /* NewsfeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D37B6519D65C2B004F7F54 /* NewsfeedViewController.m */; };
 		94E3F64D19D39FF000DED45B /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E3F64C19D39FF000DED45B /* ProgressViewController.m */; };
 		94F6458A19CED39A00658DE2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F6458919CED39A00658DE2 /* Social.framework */; };
 		94F6458C19CED3A300658DE2 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F6458B19CED3A300658DE2 /* Twitter.framework */; };
@@ -92,14 +92,14 @@
 		9499A39C19CD316200483DAB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9499A39E19CD316D00483DAB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9499A3A019CD317A00483DAB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9499A3A519CD63E500483DAB /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
-		9499A3A619CD63E500483DAB /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		9499A3EE19CE013800483DAB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		9499A3EF19CE013800483DAB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9499A3F119CE27BC00483DAB /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		9499A3F219CE27BC00483DAB /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		94B729AF19CECFFE00783F6F /* KarmaRecieveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KarmaRecieveViewController.h; sourceTree = "<group>"; };
 		94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KarmaRecieveViewController.m; sourceTree = "<group>"; };
+		94D37B6419D65C2B004F7F54 /* NewsfeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsfeedViewController.h; sourceTree = "<group>"; };
+		94D37B6519D65C2B004F7F54 /* NewsfeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedViewController.m; sourceTree = "<group>"; };
 		94E3F64B19D39FF000DED45B /* ProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
 		94E3F64C19D39FF000DED45B /* ProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
 		94F6458919CED39A00658DE2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -193,6 +193,7 @@
 		9499A34B19CD0D7D00483DAB /* Karma */ = {
 			isa = PBXGroup;
 			children = (
+				94D37B6319D65C0D004F7F54 /* Newsfeed */,
 				9499A3F419CE2B7E00483DAB /* Intro */,
 				9499A3ED19CE00C400483DAB /* Give Karma */,
 				9499A3EC19CE00A100483DAB /* Get Karma */,
@@ -237,10 +238,8 @@
 		9499A3EC19CE00A100483DAB /* Get Karma */ = {
 			isa = PBXGroup;
 			children = (
-				9499A3A519CD63E500483DAB /* Request.h */,
 				94B729AF19CECFFE00783F6F /* KarmaRecieveViewController.h */,
 				94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */,
-				9499A3A619CD63E500483DAB /* Request.m */,
 				9499A35D19CD0D7D00483DAB /* SecondViewController.h */,
 				9499A35E19CD0D7D00483DAB /* SecondViewController.m */,
 				94E3F64B19D39FF000DED45B /* ProgressViewController.h */,
@@ -270,6 +269,15 @@
 			);
 			name = Intro;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		94D37B6319D65C0D004F7F54 /* Newsfeed */ = {
+			isa = PBXGroup;
+			children = (
+				94D37B6419D65C2B004F7F54 /* NewsfeedViewController.h */,
+				94D37B6519D65C2B004F7F54 /* NewsfeedViewController.m */,
+			);
+			name = Newsfeed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,9 +383,9 @@
 				9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */,
 				9499A35C19CD0D7D00483DAB /* FirstViewController.m in Sources */,
 				94E3F64D19D39FF000DED45B /* ProgressViewController.m in Sources */,
+				94D37B6619D65C2B004F7F54 /* NewsfeedViewController.m in Sources */,
 				9499A35219CD0D7D00483DAB /* main.m in Sources */,
 				9499A37F19CD180400483DAB /* IntroViewController.m in Sources */,
-				9499A3A719CD63E500483DAB /* Request.m in Sources */,
 				9499A3F019CE013800483DAB /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

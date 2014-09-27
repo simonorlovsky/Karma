@@ -83,6 +83,7 @@
     NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
     cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:30];
+    cell.detailTextLabel.text = [_requests objectAtIndex:indexPath.row];
 
     return cell;
 }
@@ -93,6 +94,7 @@
     //Initialize new viewController
     [self performSegueWithIdentifier:@"segue" sender:self];
 }
+
 
 
 

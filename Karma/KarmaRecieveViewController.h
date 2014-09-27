@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface KarmaRecieveViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end

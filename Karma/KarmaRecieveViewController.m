@@ -55,6 +55,8 @@
         
         NSLog(@"%@",desc);
     }];
+    
+    _titleLabel.text= @"Title";
 
 }
 

@@ -90,7 +90,7 @@
     
     if ([self.titleName isEqualToString:@"Random karma"]) {
         PFObject *request = [PFObject objectWithClassName:@"request"];
-        request[@"type"] = @"random";
+        request[@"type"] = @"Tough Situation";
         request[@"description"] = description;
         request[@"location"] = location;
         //request[@"name"] = _userName;
@@ -100,7 +100,7 @@
     }
     else if([self.titleName isEqualToString:@"Store karma"]){
         PFObject *request = [PFObject objectWithClassName:@"request"];
-        request[@"type"] = @"store";
+        request[@"type"] = @"Life Gear";
         request[@"description"] = description;
         request[@"location"] = location;
 //        request[@"name"] = _userName;
@@ -110,7 +110,7 @@
     }
     else if([self.titleName isEqualToString:@"Print karma"]){
         PFObject *request = [PFObject objectWithClassName:@"request"];
-        request[@"type"] = @"print";
+        request[@"type"] = @"Print Me";
         request[@"description"] = description;
         request[@"location"] = location;
 //        request[@"name"] = _userName;
@@ -119,7 +119,7 @@
     }
     else{
         PFObject *request = [PFObject objectWithClassName:@"request"];
-        request[@"type"] = @"food";
+        request[@"type"] = @"Munchies";
         request[@"description"] = description;
         request[@"location"] = location;
 //        request[@"name"] = _userName;

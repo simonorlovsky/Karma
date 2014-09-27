@@ -39,7 +39,7 @@
             // Do something with the found objects
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
-                [_requests addObject:object[@"type"]];
+                [_requests insertObject:object[@"type"] atIndex:0];
                 
             }
         } else {
@@ -82,7 +82,7 @@
     
     NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
     cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
-    cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:60];
+    cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:30];
 
     return cell;
 }

@@ -193,13 +193,13 @@
 		9499A34B19CD0D7D00483DAB /* Karma */ = {
 			isa = PBXGroup;
 			children = (
-				94D37B6319D65C0D004F7F54 /* Newsfeed */,
+				9499A35719CD0D7D00483DAB /* Main.storyboard */,
+				9499A35419CD0D7D00483DAB /* AppDelegate.h */,
+				9499A35519CD0D7D00483DAB /* AppDelegate.m */,
 				9499A3F419CE2B7E00483DAB /* Intro */,
 				9499A3ED19CE00C400483DAB /* Give Karma */,
 				9499A3EC19CE00A100483DAB /* Get Karma */,
-				9499A35419CD0D7D00483DAB /* AppDelegate.h */,
-				9499A35519CD0D7D00483DAB /* AppDelegate.m */,
-				9499A35719CD0D7D00483DAB /* Main.storyboard */,
+				94D37B6319D65C0D004F7F54 /* Newsfeed */,
 				9499A36019CD0D7D00483DAB /* Images.xcassets */,
 				9499A34C19CD0D7D00483DAB /* Supporting Files */,
 			);

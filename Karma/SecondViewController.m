@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem setHidesBackButton:YES];
     
     _refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView addSubview:_refreshControl];
@@ -117,7 +118,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
+    //NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
     cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:30];
     cell.detailTextLabel.text = [_requests objectAtIndex:indexPath.row];

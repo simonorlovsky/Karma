@@ -22,6 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationItem setHidesBackButton:YES];
+    
     self.navigationController.navigationBar.topItem.title = @"Give Karma";
 //	PFObject *request = [PFObject objectWithClassName:@"request"];
 //    request[@"type"] = @"coffee";

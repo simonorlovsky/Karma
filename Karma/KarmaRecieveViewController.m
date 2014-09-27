@@ -66,6 +66,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)confirmButtonPressed:(id)sender {
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Are you sure?"
+                                                     message:@"Please confirm request"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles: nil];
+    [alert addButtonWithTitle:@"I'm sure"];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"Button Index =%ld",buttonIndex);
+    if (buttonIndex == 0)
+    {
+        NSLog(@"You have clicked Cancel");
+    }
+    else if(buttonIndex == 1)
+    {
+        NSLog(@"You have clicked I'm sure");
+    }
+    
+    [self sendCompleted];
+    
+}
+
+-(void)sendCompleted{
+    [self performSegueWithIdentifier:@"confirmSegue" sender:self];
+
+}
+
+
+
 /*
 #pragma mark - Navigation
 

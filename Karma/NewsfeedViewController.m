@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem setHidesBackButton:YES];
     
     // Initialize the refresh control.
     _refreshControl = [[UIRefreshControl alloc] init];

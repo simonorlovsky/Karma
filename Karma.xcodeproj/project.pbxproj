@@ -241,10 +241,10 @@
 		9499A3EC19CE00A100483DAB /* Get Karma */ = {
 			isa = PBXGroup;
 			children = (
-				94B729AF19CECFFE00783F6F /* KarmaRecieveViewController.h */,
-				94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */,
 				9499A35D19CD0D7D00483DAB /* SecondViewController.h */,
 				9499A35E19CD0D7D00483DAB /* SecondViewController.m */,
+				94B729AF19CECFFE00783F6F /* KarmaRecieveViewController.h */,
+				94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */,
 				94E3F64B19D39FF000DED45B /* ProgressViewController.h */,
 				94E3F64C19D39FF000DED45B /* ProgressViewController.m */,
 			);
@@ -254,12 +254,12 @@
 		9499A3ED19CE00C400483DAB /* Give Karma */ = {
 			isa = PBXGroup;
 			children = (
-				9499A3F119CE27BC00483DAB /* RateViewController.h */,
-				9499A3F219CE27BC00483DAB /* RateViewController.m */,
 				9499A35A19CD0D7D00483DAB /* FirstViewController.h */,
 				9499A35B19CD0D7D00483DAB /* FirstViewController.m */,
 				9499A3EE19CE013800483DAB /* DetailViewController.h */,
 				9499A3EF19CE013800483DAB /* DetailViewController.m */,
+				9499A3F119CE27BC00483DAB /* RateViewController.h */,
+				9499A3F219CE27BC00483DAB /* RateViewController.m */,
 			);
 			name = "Give Karma";
 			sourceTree = "<group>";

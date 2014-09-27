@@ -40,6 +40,7 @@
 		9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9499A3F219CE27BC00483DAB /* RateViewController.m */; };
 		94B729B119CECFFE00783F6F /* KarmaRecieveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */; };
 		94D37B6619D65C2B004F7F54 /* NewsfeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D37B6519D65C2B004F7F54 /* NewsfeedViewController.m */; };
+		94D37B6919D72D47004F7F54 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D37B6819D72D47004F7F54 /* NewsDetailViewController.m */; };
 		94E3F64D19D39FF000DED45B /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E3F64C19D39FF000DED45B /* ProgressViewController.m */; };
 		94F6458A19CED39A00658DE2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F6458919CED39A00658DE2 /* Social.framework */; };
 		94F6458C19CED3A300658DE2 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F6458B19CED3A300658DE2 /* Twitter.framework */; };
@@ -100,6 +101,8 @@
 		94B729B019CECFFE00783F6F /* KarmaRecieveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KarmaRecieveViewController.m; sourceTree = "<group>"; };
 		94D37B6419D65C2B004F7F54 /* NewsfeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsfeedViewController.h; sourceTree = "<group>"; };
 		94D37B6519D65C2B004F7F54 /* NewsfeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedViewController.m; sourceTree = "<group>"; };
+		94D37B6719D72D47004F7F54 /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		94D37B6819D72D47004F7F54 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		94E3F64B19D39FF000DED45B /* ProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
 		94E3F64C19D39FF000DED45B /* ProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
 		94F6458919CED39A00658DE2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -276,6 +279,8 @@
 			children = (
 				94D37B6419D65C2B004F7F54 /* NewsfeedViewController.h */,
 				94D37B6519D65C2B004F7F54 /* NewsfeedViewController.m */,
+				94D37B6719D72D47004F7F54 /* NewsDetailViewController.h */,
+				94D37B6819D72D47004F7F54 /* NewsDetailViewController.m */,
 			);
 			name = Newsfeed;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9499A35F19CD0D7D00483DAB /* SecondViewController.m in Sources */,
+				94D37B6919D72D47004F7F54 /* NewsDetailViewController.m in Sources */,
 				94B729B119CECFFE00783F6F /* KarmaRecieveViewController.m in Sources */,
 				9499A35619CD0D7D00483DAB /* AppDelegate.m in Sources */,
 				9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */,

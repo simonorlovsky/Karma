@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface DetailViewController : UIViewController<UITextFieldDelegate>
+@interface DetailViewController : UIViewController<UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *typeLabel;
 @property (strong, nonatomic) IBOutlet NSString *titleName;

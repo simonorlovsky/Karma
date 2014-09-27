@@ -75,9 +75,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)SubmitButton:(id)sender {
-    NSString *description = _descriptionTextField.text;
-    NSString *location = _locationTextField.text;
-//    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *FBuser, NSError *error) {
+    //    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *FBuser, NSError *error) {
 //        if (error) {
 //            // Handle error
 //        }
@@ -88,6 +86,36 @@
 //        }
 //    }];
     
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Are you sure?"
+                                                     message:@"Please confirm request"
+                                                    delegate:self
+                                           cancelButtonTitle:@"Cancel"
+                                           otherButtonTitles: nil];
+    [alert addButtonWithTitle:@"I'm sure"];
+    [alert show];
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"Button Index =%ld",buttonIndex);
+    if (buttonIndex == 0)
+    {
+        NSLog(@"You have clicked Cancel");
+    }
+    else if(buttonIndex == 1)
+    {
+        NSLog(@"You have clicked I'm sure");
+        [self sendRequest];
+    }
+    
+}
+
+-(void)sendRequest{
+    NSString *description = _descriptionTextField.text;
+    NSString *location = _locationTextField.text;
+
     if ([self.titleName isEqualToString:@"Random karma"]) {
         PFObject *request = [PFObject objectWithClassName:@"request"];
         request[@"type"] = @"Tough Situation";
@@ -103,8 +131,8 @@
         request[@"type"] = @"Life Gear";
         request[@"description"] = description;
         request[@"location"] = location;
-//        request[@"name"] = _userName;
-//        request[@"image"] = _userImageURL;
+        //        request[@"name"] = _userName;
+        //        request[@"image"] = _userImageURL;
         [request saveInBackground];
         
     }
@@ -113,8 +141,8 @@
         request[@"type"] = @"Print Me";
         request[@"description"] = description;
         request[@"location"] = location;
-//        request[@"name"] = _userName;
-//        request[@"image"] = _userImageURL;
+        //        request[@"name"] = _userName;
+        //        request[@"image"] = _userImageURL;
         [request saveInBackground];
     }
     else{
@@ -122,10 +150,12 @@
         request[@"type"] = @"Munchies";
         request[@"description"] = description;
         request[@"location"] = location;
-//        request[@"name"] = _userName;
-//        request[@"image"] = _userImageURL;
+        //        request[@"name"] = _userName;
+        //        request[@"image"] = _userImageURL;
         [request saveInBackground];
     }
+    
+    [self performSegueWithIdentifier:@"confirmSegue" sender:self];
 
 }
 

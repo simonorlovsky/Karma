@@ -20,6 +20,7 @@
     NSMutableArray *_requests;
     NSMutableArray *_requests1;
     NSMutableArray *_requestObjects;
+    NSMutableArray *_requestLocations;
     UIRefreshControl* _refreshControl;
     int _cellSelected;
 }
@@ -45,6 +46,7 @@
     
     _requests = [[NSMutableArray alloc] init];
     _requestObjects = [[NSMutableArray alloc] init];
+    _requestLocations = [[NSMutableArray alloc] init];
     PFQuery *query = [PFQuery queryWithClassName:@"request"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
@@ -56,6 +58,8 @@
                 NSLog(@"%@", object.objectId);
                 [_requests insertObject:object[@"type"] atIndex:0];
                 [_requestObjects insertObject:object atIndex:0];
+                [_requestLocations insertObject:object[@"location"] atIndex:0];
+                
                 
             }
         } else {
@@ -126,7 +130,7 @@
     //NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
     cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:30];
-    cell.detailTextLabel.text = [_requests objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [_requestLocations objectAtIndex:indexPath.row];
 
     return cell;
 }

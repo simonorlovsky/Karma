@@ -47,9 +47,29 @@
     // Align the button in the center horizontally
     [self preferredStatusBarStyle];
     
+    
+}
+- (IBAction)loginButtonPressed:(id)sender {
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Login" message:@"Enter Username & Password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [alert addButtonWithTitle:@"Login"];
+    [alert show];
+}
+- (IBAction)registerButtonPressed:(id)sender {
 }
 
-
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        UITextField *username = [alertView textFieldAtIndex:0];
+        NSLog(@"username: %@", username.text);
+        
+        UITextField *password = [alertView textFieldAtIndex:1];
+        NSLog(@"password: %@", password.text);
+        
+    }
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Qhw-fk-cnl">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -325,6 +324,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wyr-dJ-TC1"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="6ae-bn-Ar3" id="efM-kf-DsQ"/>
+                        <outlet property="peopleLabel" destination="w1h-o5-Cbd" id="Xa6-ee-umR"/>
+                        <outlet property="titleLabel" destination="Zkb-U2-JlM" id="VYs-yt-jck"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ai1-34-q0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

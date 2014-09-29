@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _titleLabel.text = _completed[@"type"];
+    _descriptionLabel.text = _completed[@"description"];
+    _peopleLabel.text = _completed[@"location"];
 }
 
 - (void)didReceiveMemoryWarning {

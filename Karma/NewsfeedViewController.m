@@ -8,11 +8,14 @@
 
 #import "NewsfeedViewController.h"
 #import <Parse/Parse.h>
+#import "NewsDetailViewController.h"
 
 @interface NewsfeedViewController ()
 {
     NSMutableArray * _completed;
     UIRefreshControl* _refreshControl;
+    NSMutableArray* _completedObjects;
+    int _cellSelected;
 }
 @end
 
@@ -36,6 +39,7 @@
     
     // Do any additional setup after loading the view.
     _completed = [[NSMutableArray alloc] init];
+    _completedObjects = [[NSMutableArray alloc] init];
     PFQuery *query = [PFQuery queryWithClassName:@"completed"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
@@ -46,6 +50,8 @@
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
                 [_completed insertObject:object[@"type"] atIndex:0];
+                [_completedObjects insertObject:object atIndex:0];
+
                 //NSLog(_completed[0]);
                 
             }
@@ -64,6 +70,7 @@
 
 -(void)reloadData{
     _completed = [[NSMutableArray alloc] init];
+    _completedObjects = [[NSMutableArray alloc] init];
     PFQuery *query = [PFQuery queryWithClassName:@"completed"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
@@ -74,6 +81,7 @@
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
                 [_completed insertObject:object[@"type"] atIndex:0];
+                [_completedObjects insertObject:object atIndex:0];
                 //NSLog(_completed[0]);
                 
             }
@@ -97,11 +105,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"Number of requests: %ld",_completed.count);
+    
     return [_completed count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    _cellSelected = indexPath.row;
+
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -123,6 +134,20 @@
     //NSString *selectedValue = [displayValues objectAtIndex:indexPath.row];
     //Initialize new viewController
     [self performSegueWithIdentifier:@"segue" sender:self];
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    // Make sure your segue name in storyboard is the same as this line
+    
+    // Get reference to the destination view controller
+    NewsDetailViewController *detailVC = segue.destinationViewController;;
+    
+    // Pass any objects to the view controller here, like...
+    detailVC.completed = _completedObjects[_cellSelected];
+    NSLog(@"Karma type is ???....%@",_completedObjects[_cellSelected][@"type"]);
+    NSLog(@"Karma type is !!!....%@",detailVC.completed[@"type"]);
+    
 }
 
 

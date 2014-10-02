@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 simonorlovsky. All rights reserved.
 //
 // Apple Jason
+// Figure out how to populate the table again
 
 #import "SecondViewController.h"
 #import <Parse/Parse.h>
@@ -70,12 +71,14 @@
 //            [_typeArray addObject:_requests[i][@"type"]];
 //            NSLog(_requests[i][@"type"]);
 //        }
-        [_tableView reloadData];
         
         //NSString *type= _requests[0][@"type"];
         
         //NSLog(@"%@",type);
     }];
+    [_tableView reloadData];
+    NSLog(@"Reloaded");
+
 }
 
 -(void)reloadData{

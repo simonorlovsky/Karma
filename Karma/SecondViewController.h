@@ -11,5 +11,8 @@
 @interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) NSMutableArray *requests;
+-(void)loadData;
+
 
 @end

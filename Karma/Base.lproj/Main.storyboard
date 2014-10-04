@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="-194"/>
+            <point key="canvasLocation" x="1163" y="-194"/>
         </scene>
         <!--Confirm Karma Exchange-->
         <scene sceneID="RWJ-Q5-0yq">
@@ -194,6 +194,7 @@
                     <navigationItem key="navigationItem" id="Wwg-bD-tPE"/>
                     <connections>
                         <outlet property="tableView" destination="uYc-Gj-I9a" id="tH4-zu-t7s"/>
+                        <segue destination="CZ4-MO-1fc" kind="modal" identifier="initSegue" id="oQ5-fw-HkP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
@@ -289,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mM-Ob-Kt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="1178"/>
+            <point key="canvasLocation" x="1190" y="1178"/>
         </scene>
         <!--News Detail View Controller-->
         <scene sceneID="aeY-T0-AQw">
@@ -496,7 +497,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="f1x-LG-lO0"/>
         <segue reference="SQN-rl-LY6"/>
+        <segue reference="oQ5-fw-HkP"/>
+        <segue reference="C7i-eg-38o"/>
     </inferredMetricsTieBreakers>
 </document>

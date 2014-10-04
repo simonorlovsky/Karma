@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsfeedViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+-(void)reloadDataTable;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 

@@ -18,8 +18,7 @@
 
 @implementation SecondViewController
 {
-    NSMutableArray *_requests;
-    NSMutableArray *_requests1;
+    //NSMutableArray *_requests;
     NSMutableArray *_requestObjects;
     NSMutableArray *_requestLocations;
     UIRefreshControl* _refreshControl;
@@ -32,7 +31,7 @@
     [self.navigationItem setHidesBackButton:YES];
     
      
-    
+    //making refresher
     _refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView addSubview:_refreshControl];
     _refreshControl.backgroundColor = [UIColor purpleColor];
@@ -43,69 +42,116 @@
     
     self.navigationController.navigationBar.topItem.title = @"Get Karma";
     // Do any additional setup after loading the view, typically from a nib.
-    _requests1 = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
     
-    _requests = [[NSMutableArray alloc] init];
+    
+        //[_tableView reloadDataSet];
+    [self loadData];
+    
+    
+}
+- (void)reloadData
+{
+    
+    // End the refreshing
+    if (_refreshControl) {
+        
+        [self loadData];
+        
+        [_refreshControl endRefreshing];
+    }
+    // Reload table data
+    [_tableView reloadData];
+    
+
+}
+
+-(void)loadData{
+    NSLog(@"YAYAYAYAY!");
     _requestObjects = [[NSMutableArray alloc] init];
     _requestLocations = [[NSMutableArray alloc] init];
-    PFQuery *query = [PFQuery queryWithClassName:@"request"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %ld requests.", objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-                [_requests insertObject:object[@"type"] atIndex:0];
-                [_requestObjects insertObject:object atIndex:0];
-                [_requestLocations insertObject:object[@"location"] atIndex:0];
-                
-                
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-//        for (int i=0; i<50; i++) {
-//            [_typeArray addObject:_requests[i][@"type"]];
-//            NSLog(_requests[i][@"type"]);
-//        }
-        
-        //NSString *type= _requests[0][@"type"];
-        
-        //NSLog(@"%@",type);
-    }];
-    [_tableView reloadData];
-    NSLog(@"Reloaded");
-
-}
-
--(void)reloadData{
     _requests = [[NSMutableArray alloc] init];
+    
     PFQuery *query = [PFQuery queryWithClassName:@"request"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %ld requests.", objects.count);
+            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
+                NSLog(@"%@", object[@"type"]);
+                [_requestObjects insertObject:object atIndex:0];
                 [_requests insertObject:object[@"type"] atIndex:0];
-                //NSLog(_completed[0]);
+                //[_requestLocations insertObject:object[@"location"] atIndex:0];
+                [_tableView reloadData];
                 
             }
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-        
-        [_tableView reloadData];
-        
     }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"request"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %ld requests.", objects.count);
+//            
+//            // Do something with the found objects
+//            for (PFObject *object in objects) {
+//                NSLog(@"%@", object[@"type"]);
+//                [_requests insertObject:object[@"type"] atIndex:0];
+//                [_requestObjects insertObject:object atIndex:0];
+//                [_requestLocations insertObject:object[@"location"] atIndex:0];
+//                [_tableView reloadData];
+//                NSLog(@"THIS IS IMPORTANT %@", _requests[0]);
+//
+//                
+//                
+//            }
+//            
+//            NSLog(@"Yay!");
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//        //        for (int i=0; i<50; i++) {
+//        //            [_typeArray addObject:_requests[i][@"type"]];
+//        //            NSLog(_requests[i][@"type"]);
+//        //        }
+//        
+//        //NSString *type= _requests[0][@"type"];
+//        
+//        //NSLog(@"%@",type);
+//    }];
     [_refreshControl endRefreshing];
 }
+
+//-(void)reloadDataSet{
+//    _requests = [[NSMutableArray alloc] init];
+//    PFQuery *query = [PFQuery queryWithClassName:@"request"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %ld requests.", objects.count);
+//            // Do something with the found objects
+//            for (PFObject *object in objects) {
+//                NSLog(@"%@", object.objectId);
+//                [_requests insertObject:object[@"type"] atIndex:0];
+//                //NSLog(_completed[0]);
+//                
+//            }
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//        
+//        [_tableView reloadData];
+//        
+//    }];
+//
+//}
 
 
 - (void)didReceiveMemoryWarning
@@ -116,25 +162,29 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Number of requests: %ld",_requests.count);
+    
+    //NSLog(@"Number of requests: %ld",_requests.count);
+
     return [_requests count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    _cellSelected = indexPath.row;
+    
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
     //NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
     cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:30];
-    cell.detailTextLabel.text = [_requestLocations objectAtIndex:indexPath.row];
-
+    cell.detailTextLabel.text = [_requests objectAtIndex:indexPath.row];
+    
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

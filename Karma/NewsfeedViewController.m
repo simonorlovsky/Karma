@@ -26,13 +26,13 @@
     [self.navigationItem setHidesBackButton:YES];
     
     // Initialize the refresh control.
-    _refreshControl = [[UIRefreshControl alloc] init];
-    [self.tableView addSubview:_refreshControl];
-    _refreshControl.backgroundColor = [UIColor purpleColor];
-    _refreshControl.tintColor = [UIColor whiteColor];
-    [_refreshControl addTarget:self
-                            action:@selector(reloadData)
-                  forControlEvents:UIControlEventValueChanged];
+//    _refreshControl = [[UIRefreshControl alloc] init];
+//    [self.tableView addSubview:_refreshControl];
+//    _refreshControl.backgroundColor = [UIColor purpleColor];
+//    _refreshControl.tintColor = [UIColor whiteColor];
+//    [_refreshControl addTarget:self
+//                            action:@selector(reloadData)
+//                  forControlEvents:UIControlEventValueChanged];
     
     self.tableView.delegate= self;
     self.tableView.dataSource= self;
@@ -48,7 +48,6 @@
             NSLog(@"Successfully retrieved %ld requests.", objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
                 [_completed insertObject:object[@"type"] atIndex:0];
                 [_completedObjects insertObject:object atIndex:0];
 
@@ -68,33 +67,33 @@
 
 }
 
--(void)reloadData{
-    _completed = [[NSMutableArray alloc] init];
-    _completedObjects = [[NSMutableArray alloc] init];
-    PFQuery *query = [PFQuery queryWithClassName:@"completed"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %ld requests.", objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-                [_completed insertObject:object[@"type"] atIndex:0];
-                [_completedObjects insertObject:object atIndex:0];
-                //NSLog(_completed[0]);
-                
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-        
-        [_tableView reloadData];
-        
-    }];
-    [_refreshControl endRefreshing];
-}
+//-(void)reloadDataTable{
+//    _completed = [[NSMutableArray alloc] init];
+//    _completedObjects = [[NSMutableArray alloc] init];
+//    PFQuery *query = [PFQuery queryWithClassName:@"completed"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %ld requests.", objects.count);
+//            // Do something with the found objects
+//            for (PFObject *object in objects) {
+//                NSLog(@"%@", object.objectId);
+//                [_completed insertObject:object[@"type"] atIndex:0];
+//                [_completedObjects insertObject:object atIndex:0];
+//                //NSLog(_completed[0]);
+//                
+//            }
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//        
+//        [_tableView reloadData];
+//        
+//    }];
+//    [_refreshControl endRefreshing];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

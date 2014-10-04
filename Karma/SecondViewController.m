@@ -12,6 +12,7 @@
 #import <Parse/Parse.h>
 #import "KarmaRecieveViewController.h"
 
+
 @interface SecondViewController ()
 
 @end
@@ -172,20 +173,34 @@
 {
     _cellSelected = indexPath.row;
     
-    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    static NSString *cellIdentifier = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
     //NSLog(@"Requests size: %ld and object %@",_requests.count,[_requests objectAtIndex:indexPath.row]);
     cell.textLabel.text = [_requests objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:30];
-    cell.detailTextLabel.text = [_requests objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = _requestObjects[indexPath.row][@"location"];
+    CGRect frame = cell.imageView.frame;
+    frame.size.height = 30.0;
+    /* other frame changes ... */
+    cell.imageView.frame = frame;
+    cell.imageView.image = [UIImage imageNamed:@"karmaProfPic"];
+    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    PFObject * request= [_requestObjects objectAtIndex:indexPath.row];
+//    cell.titleLabel.text = request[@"type"];
+//    cell.userLabel.text = @"Simon Orlovsky";
+//    cell.locationLabel.text = request[@"location"];
     
     return cell;
+
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

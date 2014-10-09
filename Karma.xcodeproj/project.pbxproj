@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		945DD25F19E647BE00189169 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 945DD25E19E647BE00189169 /* RegisterViewController.m */; };
 		9499A34619CD0D7D00483DAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A34519CD0D7D00483DAB /* Foundation.framework */; };
 		9499A34819CD0D7D00483DAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A34719CD0D7D00483DAB /* CoreGraphics.framework */; };
 		9499A34A19CD0D7D00483DAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9499A34919CD0D7D00483DAB /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		945DD25D19E647BE00189169 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		945DD25E19E647BE00189169 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		9499A34219CD0D7D00483DAB /* Karma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Karma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9499A34519CD0D7D00483DAB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9499A34719CD0D7D00483DAB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -269,6 +272,8 @@
 			children = (
 				9499A37D19CD180400483DAB /* IntroViewController.h */,
 				9499A37E19CD180400483DAB /* IntroViewController.m */,
+				945DD25D19E647BE00189169 /* RegisterViewController.h */,
+				945DD25E19E647BE00189169 /* RegisterViewController.m */,
 			);
 			name = Intro;
 			path = ..;
@@ -389,6 +394,7 @@
 				9499A3F319CE27BC00483DAB /* RateViewController.m in Sources */,
 				9499A35C19CD0D7D00483DAB /* FirstViewController.m in Sources */,
 				94E3F64D19D39FF000DED45B /* ProgressViewController.m in Sources */,
+				945DD25F19E647BE00189169 /* RegisterViewController.m in Sources */,
 				94D37B6619D65C2B004F7F54 /* NewsfeedViewController.m in Sources */,
 				9499A35219CD0D7D00483DAB /* main.m in Sources */,
 				9499A37F19CD180400483DAB /* IntroViewController.m in Sources */,

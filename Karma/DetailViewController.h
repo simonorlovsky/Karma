@@ -18,5 +18,11 @@
 @property (strong, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (strong, nonatomic) IBOutlet UITextField *locationTextField;
 
+- (IBAction)showNormalActionSheet:(id)sender;
+
+- (IBAction)showDeleteConfirmation:(id)sender;
+
+- (IBAction)showColorsActionSheet:(id)sender;
+
 
 @end

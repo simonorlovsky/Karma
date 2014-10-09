@@ -54,10 +54,6 @@
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-        NSString *desc= _requests[0][@"description"];
-        
-        
-        //NSLog(@"Title name: %@",self.titleName);
     }];
     
     _titleLabel.text = _request[@"type"];

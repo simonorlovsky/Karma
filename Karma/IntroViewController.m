@@ -14,7 +14,10 @@
 
 
 @interface IntroViewController ()
-
+{
+    NSString *_username;
+    NSString *_email;
+}
 @end
 
 @implementation IntroViewController
@@ -52,27 +55,71 @@
     
 }
 - (IBAction)loginButtonPressed:(id)sender {
-    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Login" message:@"Enter Username & Password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Login" message:@"Enter Email & Password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+    alert.tag = 1234;
     alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     [alert addButtonWithTitle:@"Login"];
     [alert show];
 }
 - (IBAction)registerButtonPressed:(id)sender {
-}
+//    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Register" message:@"Enter Email & Password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+//    alert.tag = 3456;
+//    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+//    [alert addButtonWithTitle:@"Register"];
+//    [alert show];
+//
+//    
+//    UIAlertView * alert2 =[[UIAlertView alloc ] initWithTitle:@"Register2" message:@"Enter Email & Password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+//    alert.tag = 4567;
+//    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+//    [alert addButtonWithTitle:@"Register"];
+//    [alert show];
+    
+    
+    }
+
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1)
+    UITextField *username = [alertView textFieldAtIndex:0];
+    UITextField *password = [alertView textFieldAtIndex:1];
+
+
+    if (alertView.tag == 1234) {  //First Dialog
+        [PFUser logInWithUsernameInBackground:username.text password:password.text
+                                        block:^(PFUser *user, NSError *error) {
+                                            if (user) {
+                                                // Do stuff after successful login.
+                                                [self performSegueWithIdentifier:@"segue" sender:self];
+                                            } else {
+                                                // The login failed. Check error to see why.
+                                                UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Invalid Login"
+                                                                                                 message:@"Sorry"
+                                                                                                delegate:self
+                                                                                       cancelButtonTitle:@"HELP"
+                                                                                       otherButtonTitles: nil];
+                                                [alert addButtonWithTitle:@"OK"];
+                                                [alert show];
+                                            }
+                                        }];    }
+    
+    if (alertView.tag == 3456) {  // Dialog
+        if (buttonIndex == 1)  //Clicked OK
+        {
+            UITextField *username = [alertView textFieldAtIndex:0];
+            UITextField *email = [alertView textFieldAtIndex:1];
+            _username = username.text;
+            _email= email.text;
+        }
+    }
+
+    else  if (alertView.tag == 4567) //Second Dialog.
     {
-        UITextField *username = [alertView textFieldAtIndex:0];
-        NSLog(@"username: %@", username.text);
+        UITextField *password = [alertView textFieldAtIndex:0];
         
-        UITextField *password = [alertView textFieldAtIndex:1];
-        NSLog(@"password: %@", password.text);
-        
+                
     }
 }
-
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -83,5 +130,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

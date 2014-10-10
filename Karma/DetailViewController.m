@@ -115,16 +115,24 @@
 -(void)sendRequest{
     NSString *description = _descriptionTextField.text;
     NSString *location = _locationTextField.text;
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        // do stuff with the user
+    } else {
+        // show the signup or login screen
+    }
 
     if ([self.titleName isEqualToString:@"Random karma"]) {
         PFObject *request = [PFObject objectWithClassName:@"request"];
         request[@"type"] = @"Tough Situation";
         request[@"description"] = description;
         request[@"location"] = location;
+        request[@"User"] = currentUser.username;
         //request[@"name"] = _userName;
         //request[@"image"] = _userImageURL;
         [request saveInBackground];
         NSLog(@"Success!!");
+        NSLog(currentUser.username);
     }
     else if([self.titleName isEqualToString:@"Store karma"]){
         PFObject *request = [PFObject objectWithClassName:@"request"];

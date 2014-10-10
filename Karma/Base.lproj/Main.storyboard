@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="x7m-Y7-6LP">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -13,55 +14,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ooR-o9-uoR">
-                                <rect key="frame" x="56" y="41" width="208" height="67"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="munchies">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="MUNCHIES" backgroundImage="blueSquare">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="coffeeRequest:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="xlS-qU-vhP"/>
-                                    <segue destination="NSe-Kf-n1s" kind="push" identifier="foodSegue" id="YvE-lA-hSR"/>
+                                    <segue destination="NSe-Kf-n1s" kind="modal" identifier="foodSegue" id="YvE-lA-hSR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rF4-zh-hUR">
-                                <rect key="frame" x="56" y="202" width="208" height="67"/>
+                                <rect key="frame" x="0.0" y="216" width="320" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="printMeButton">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="PRINT ME" backgroundImage="greenSquare">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="printRequest:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="5xr-p1-gP2"/>
-                                    <segue destination="NSe-Kf-n1s" kind="push" identifier="printSegue" id="mT8-da-f2q"/>
+                                    <segue destination="NSe-Kf-n1s" kind="modal" identifier="printSegue" id="mT8-da-f2q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q1W-3Z-005">
-                                <rect key="frame" x="56" y="122" width="208" height="67"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="lifeGearButton">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="LIFE GEAR" backgroundImage="redSquare">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="storeRequest:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="sgw-zy-Eub"/>
-                                    <segue destination="NSe-Kf-n1s" kind="push" identifier="storeSegue" id="SQN-rl-LY6"/>
+                                    <segue destination="NSe-Kf-n1s" kind="modal" identifier="storeSegue" id="SQN-rl-LY6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jzi-8m-zzO">
-                                <rect key="frame" x="56" y="285" width="208" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nm0-2D-yZu">
+                                <rect key="frame" x="0.0" y="432" width="320" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="toughSituationButton">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="HELP" backgroundImage="redSquare">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jzi-8m-zzO">
+                                <rect key="frame" x="0.0" y="325" width="320" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="TOUGH SITUATION" backgroundImage="blueSquare">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="randomRequest:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="O4l-80-Hx4"/>
-                                    <segue destination="NSe-Kf-n1s" kind="push" identifier="pleaseHelp" id="duD-Nj-f1h"/>
+                                    <segue destination="NSe-Kf-n1s" kind="modal" identifier="pleaseHelp" id="duD-Nj-f1h"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="k4M-Ew-Fzt">
-                                <rect key="frame" x="31" y="397" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -148,7 +155,7 @@
                     <connections>
                         <outlet property="descriptionTextField" destination="2MR-oj-EJh" id="1f6-tt-37n"/>
                         <outlet property="locationTextField" destination="lTe-6P-0G1" id="e2U-QI-iJm"/>
-                        <segue destination="Oe2-FG-tzz" kind="push" identifier="confirmSegue" id="yxg-w4-XEc"/>
+                        <segue destination="Oe2-FG-tzz" kind="modal" identifier="confirmSegue" id="yxg-w4-XEc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xL-Gf-YeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -184,7 +191,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8YX-ce-x5E" kind="push" id="f1x-LG-lO0"/>
+                                    <segue destination="8YX-ce-x5E" kind="modal" id="f1x-LG-lO0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -224,7 +231,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Hdc-Kc-Vta" kind="push" identifier="segue" id="SR8-FR-RRF"/>
+                                            <segue destination="Hdc-Kc-Vta" kind="modal" identifier="segue" id="SR8-FR-RRF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -255,37 +262,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ark-Uu-g0L">
-                                <rect key="frame" x="32" y="55" width="272" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dbp-ug-3FK">
+                                <rect key="frame" x="0.0" y="114" width="320" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.11764705882352941" green="0.80392156862745101" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dbp-ug-3FK">
-                                <rect key="frame" x="32" y="106" width="272" height="171"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zd0-Sz-NUK">
+                                <rect key="frame" x="0.0" y="356" width="320" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zd0-Sz-NUK">
-                                <rect key="frame" x="32" y="305" width="256" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.29019607843137257" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0yO-2B-3jM">
-                                <rect key="frame" x="16" y="466" width="288" height="30"/>
+                                <rect key="frame" x="0.0" y="496" width="320" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Confirm">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Confirm" backgroundImage="blueSquare">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="confirmButtonPressed:" destination="Hdc-Kc-Vta" eventType="touchUpInside" id="7SM-tF-2U0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uIg-on-pMJ">
+                                <rect key="frame" x="0.0" y="429" width="320" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87450980392156863" green="0.30980392156862746" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ark-Uu-g0L">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.30980392159999998" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -294,12 +314,13 @@
                         <outlet property="descriptionLabel" destination="dbp-ug-3FK" id="68h-8r-i0z"/>
                         <outlet property="locationLabel" destination="Zd0-Sz-NUK" id="IwP-j2-Ldl"/>
                         <outlet property="titleLabel" destination="ark-Uu-g0L" id="u9g-MO-M5N"/>
-                        <segue destination="jkO-XJ-LiX" kind="push" identifier="confirmSegue" id="vW7-sV-msN"/>
+                        <outlet property="userLabel" destination="uIg-on-pMJ" id="RPO-jt-pVI"/>
+                        <segue destination="jkO-XJ-LiX" kind="modal" identifier="confirmSegue" id="vW7-sV-msN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9a-xs-Evc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1558" y="492"/>
+            <point key="canvasLocation" x="1553" y="466"/>
         </scene>
         <!--Newsfeed-->
         <scene sceneID="PuL-9b-PTp">
@@ -321,7 +342,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="TPj-Oq-t61" kind="push" identifier="segue" id="Iqi-Os-iAV"/>
+                                            <segue destination="TPj-Oq-t61" kind="modal" identifier="segue" id="Iqi-Os-iAV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -396,7 +417,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8YX-ce-x5E" kind="push" id="YG2-dA-nkH"/>
+                                    <segue destination="8YX-ce-x5E" kind="modal" id="YG2-dA-nkH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gGu-Za-yfK">
@@ -569,12 +590,8 @@
         <image name="blueSquare" width="640" height="120"/>
         <image name="first" width="30" height="30"/>
         <image name="greenSquare" width="640" height="898"/>
-        <image name="lifeGearButton" width="332" height="107"/>
-        <image name="munchies" width="332" height="107"/>
-        <image name="printMeButton" width="332" height="107"/>
         <image name="redSquare" width="640" height="120"/>
         <image name="second" width="30" height="30"/>
-        <image name="toughSituationButton" width="332" height="107"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -582,8 +599,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="C7i-eg-38o"/>
         <segue reference="SUk-Ux-ee1"/>
-        <segue reference="YvE-lA-hSR"/>
+        <segue reference="YG2-dA-nkH"/>
+        <segue reference="duD-Nj-f1h"/>
     </inferredMetricsTieBreakers>
 </document>

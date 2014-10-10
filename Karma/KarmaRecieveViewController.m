@@ -59,6 +59,8 @@
     _titleLabel.text = _request[@"type"];
     _descriptionLabel.text = _request[@"description"];
     _locationLabel.text = _request[@"location"];
+    _userLabel.text = _request[@"User"];
+    
 
 }
 

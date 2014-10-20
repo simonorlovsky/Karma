@@ -139,6 +139,7 @@
         request[@"type"] = @"Life Gear";
         request[@"description"] = description;
         request[@"location"] = location;
+        request[@"User"] = currentUser.username;
         //        request[@"name"] = _userName;
         //        request[@"image"] = _userImageURL;
         [request saveInBackground];
@@ -149,6 +150,7 @@
         request[@"type"] = @"Print Me";
         request[@"description"] = description;
         request[@"location"] = location;
+        request[@"User"] = currentUser.username;
         //        request[@"name"] = _userName;
         //        request[@"image"] = _userImageURL;
         [request saveInBackground];
@@ -158,6 +160,7 @@
         request[@"type"] = @"Munchies";
         request[@"description"] = description;
         request[@"location"] = location;
+        request[@"User"] = currentUser.username;
         //        request[@"name"] = _userName;
         //        request[@"image"] = _userImageURL;
         [request saveInBackground];

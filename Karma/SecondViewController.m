@@ -169,7 +169,7 @@
     return [_requests count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     _cellSelected = indexPath.row;
     
@@ -189,7 +189,14 @@
     frame.size.height = 30.0;
     /* other frame changes ... */
     cell.imageView.frame = frame;
-    cell.imageView.image = [UIImage imageNamed:@"karmaProfPic"];
+    
+    PFImageView *imageView = [[PFImageView alloc] init];
+     // remote image
+    PFUser *currentUser = [PFUser currentUser];
+    PFFile* file = [[PFFile alloc] init];
+    file = currentUser[@"profilePicture"];
+    imageView.file = file;
+    cell.imageView.image = [UIImage imageNamed:@"karmaProfPic.jpg"];
     
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 //    

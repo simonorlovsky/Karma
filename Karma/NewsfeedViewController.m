@@ -24,6 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setHidesBackButton:YES];
+    //making refresher
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [self.tableView addSubview:_refreshControl];
+    _refreshControl.backgroundColor = [UIColor purpleColor];
+    _refreshControl.tintColor = [UIColor whiteColor];
+    [_refreshControl addTarget:self
+                        action:@selector(reloadData)
+              forControlEvents:UIControlEventValueChanged];
     
     // Initialize the refresh control.
 //    _refreshControl = [[UIRefreshControl alloc] init];
@@ -62,10 +70,33 @@
         [_tableView reloadData];
         
     }];
-    
-
 
 }
+    -(void)loadData{
+        NSLog(@"YAYAYAYAY!");
+        _completedObjects = [[NSMutableArray alloc] init];
+        _completed = [[NSMutableArray alloc] init];
+    
+        PFQuery *query = [PFQuery queryWithClassName:@"request"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object[@"type"]);
+                [_completedObjects insertObject:object atIndex:0];
+                [_completed insertObject:object[@"type"] atIndex:0];
+                //[_requestLocations insertObject:object[@"location"] atIndex:0];
+                [_tableView reloadData];
+                
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 
 //-(void)reloadDataTable{
 //    _completed = [[NSMutableArray alloc] init];
